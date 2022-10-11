@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)https://cathyparada.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Te amo!</title>
+  <!--<base href="/">--><base href=".">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="https://cathyparada.com/favicon.ico">
+<style type="text/css">* {
+  box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px; }
+
+html,
+body,
+.main {
+  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  transition: background-image 1000ms linear;
+  overflow: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1800px;
+          perspective: 1800px; }
+
+textarea {
+  pointer-events: none;
+  opacity: 0; }
+
+.card-holster {
+  transition: -webkit-transform 600ms ease;
+  transition: transform 600ms ease;
+  transition: transform 600ms ease, -webkit-transform 600ms ease;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1800px;
+          perspective: 1800px;
+  height: 430px;
+  width: 230px;
+  position: relative;
+  flex: 1;
+  margin-right: 48px; }
+
+.card-holster:last-child {
+    margin-right: 0; }
+
+.card-holster:hover {
+    opacity: 1; }
+
+.card-holster .front,
+  .card-holster .back {
+    transition-property: box-shadow, -webkit-transform;
+    transition-property: transform, box-shadow;
+    transition-property: transform, box-shadow, -webkit-transform;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1); }
+
+.card-holster
+.card-holster:hover .front,
+.card-holster:hover .back {
+  transition-delay: 0ms !important;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.05); }
+
+.card-holster:hover .front .shine,
+.card-holster:hover .back .shine {
+  -webkit-transform: translateX(-150px) rotateZ(-30deg) !important;
+          transform: translateX(-150px) rotateZ(-30deg) !important; }
+
+.card-holster .outer-wrapper {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  transition-delay: 0ms;
+  -webkit-transform: translateZ(0px);
+          transform: translateZ(0px);
+  transition: -webkit-transform 150ms ease; }
+
+.card-holster .outer-wrapper:hover {
+  -webkit-transform: translateZ(40px);
+          transform: translateZ(40px); }
+
+.card-holster.flipped .front {
+  -webkit-transform: translate3d(-50%, -50%, 0px) rotateY(180deg) !important;
+          transform: translate3d(-50%, -50%, 0px) rotateY(180deg) !important; }
+
+.card-holster.flipped .back {
+  -webkit-transform: translate3d(-50%, -50%, 0px) rotateY(0deg) !important;
+          transform: translate3d(-50%, -50%, 0px) rotateY(0deg) !important; }
+
+.card-holster .card {
+  transition: -webkit-transform 500ms ease, box-shadow 150ms ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  text-align: center;
+  border-radius: 5px;
+  background: #fff;
+  overflow: hidden;
+  z-index: 2;
+  height: 420px;
+  width: 250px; }
+
+.card-holster .card.back {
+  z-index: 1;
+  -webkit-transform: translate3d(-50%, -50%, 0px) rotateY(-180deg);
+          transform: translate3d(-50%, -50%, 0px) rotateY(-180deg); }
+
+.card-holster .card .color-wrapper {
+  border-radius: 5px 5px 10px 10px;
+  height: 100%; }
+
+.card-holster:nth-child(1) .color-wrapper {
+  background-color: #0166c0; }
+
+.card-holster:nth-child(2) .color-wrapper {
+  background-color: #00203f; }
+
+.card-holster:nth-child(3) .color-wrapper {
+  background-color: #0376c1; }
+
+.card-holster:nth-child(4) .color-wrapper {
+  background-color: #5ca3da; }
+
+.card-holster:nth-child(5) .color-wrapper {
+  background-color: #a86e40; }
+
+.card-holster:nth-child(6) .color-wrapper {
+  background-color: #f1e9dd; }
+
+.card-holster .card .top-half {
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  position: absolute;
+  cursor: pointer;
+  height: 395px;
+  width: 100%;
+  left: 0px;
+  top: 0px; }
+
+.card-holster .card .top-half .shine {
+  box-shadow: 0px 0px 90px 10px rgba(255, 255, 255, 0.3);
+  transition: -webkit-transform 150ms ease;
+  transition: transform 150ms ease;
+  transition: transform 150ms ease, -webkit-transform 150ms ease;
+  position: absolute;
+  width: 260px;
+  height: 0px;
+  left: -90px;
+  top: 38px; }
+
+.card-holster .card .top-half:hover .font-container {
+  opacity: 0; }
+
+.card-holster .card .top-half:hover .hex-container {
+  opacity: 1; }
+
+.card-holster .card .top-half .font-container {
+  transition: opacity 200ms linear;
+  position: absolute;
+  height: 150px;
+  width: 100%;
+  top: 90px; }
+
+.card-holster .card .top-half .font-container .sample-container {
+  text-decoration: none;
+  position: absolute;
+  line-height: 100%;
+  color: #fff;
+  width: 100%; }
+
+.card-holster .card .top-half .font-container .sample-container.large {
+  bottom: 60px; }
+
+.card-holster .card .top-half .font-container .sample-container.large .sample {
+  font-size: 80px; }
+
+.card-holster .card .top-half .font-container .sample-container.small {
+  bottom: 0px; }
+
+.card-holster .card .top-half .font-container .sample-container.small .sample {
+  font-size: 32px; }
+
+.card-holster .card .top-half .hex-container {
+  transition: opacity 200ms linear;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  opacity: 0;
+  left: 0px;
+  top: 0px; }
+
+.card-holster .card .top-half .hex-container .hex-centerer {
+  position: absolute;
+  width: 100%;
+  top: 155px; }
+
+.card-holster .card .top-half .hex-container .hex-value {
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  font-size: 25px; }
+
+.card-holster .card .top-half .copy-text {
+  transition: opacity 300ms, -webkit-transform 300ms;
+  transition: transform 300ms, opacity 300ms;
+  transition: transform 300ms, opacity 300ms, -webkit-transform 300ms;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 1px;
+  position: absolute;
+  font-weight: bold;
+  font-size: 12px;
+  bottom: 10px;
+  color: #fff;
+  width: 100%;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  opacity: 0; }
+
+.card-holster .card .top-half .success-box {
+  -webkit-transform: translateX(-50%) translateY(100px);
+          transform: translateX(-50%) translateY(100px);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  border-radius: 5px;
+  margin-top: 100px;
+  padding-top: 50px;
+  background: #fff;
+  height: 180px;
+  width: 150px;
+  opacity: 0;
+  left: 50%; }
+
+.card-holster .card .top-half .success-box.active {
+  transition: all 200ms ease-out;
+  -webkit-transform: translateX(-50%) translateY(0px);
+          transform: translateX(-50%) translateY(0px);
+  opacity: 1; }
+
+.card-holster .card .top-half .success-box.out {
+  transition: all 150ms ease-out;
+  -webkit-transform: translateX(-50%) translateY(0px);
+          transform: translateX(-50%) translateY(0px);
+  opacity: 0; }
+
+.card-holster .card .top-half .success-box img {
+  margin-right: -10px; }
+
+.card-holster .card .top-half .success-box span {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 11px;
+  display: block;
+  color: black;
+  width: 100%; }
+
+.card-holster .card .bottom-half {
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transform: translateY(75px);
+          transform: translateY(75px);
+  position: absolute;
+  text-decoration: none;
+  width: 100%;
+  bottom: 0px;
+  left: 0; }
+
+.card-holster .card .bottom-half .sexy-tricky-to-code-dip {
+  margin-bottom: -1px;
+  overflow: hidden;
+  height: 10px; }
+
+.card-holster .card .bottom-half .sexy-tricky-to-code-dip .left-part,
+.card-holster .card .bottom-half .sexy-tricky-to-code-dip .right-part {
+  width: 50%;
+  height: 100%;
+  background: #fff; }
+
+.card-holster .card .bottom-half .sexy-tricky-to-code-dip .left-part {
+  margin-left: -15px;
+  float: left; }
+
+.card-holster .card .bottom-half .sexy-tricky-to-code-dip .right-part {
+  margin-right: -15px;
+  float: right; }
+
+.card-holster .card .bottom-half .sexy-tricky-to-code-dip svg {
+  height: 10px;
+  width: 30px;
+  float: left;
+  fill: #fff; }
+
+.card-holster .card .bottom-half .bottom-bottom-container {
+  background: #fff;
+  height: 90px; }
+
+.card-holster .card .bottom-half .bottom-bottom-container .font-details {
+  transition: opacity 300ms ease;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding-top: 20px;
+  font-weight: bold; }
+
+.card-holster .card .bottom-half .bottom-bottom-container .font-details .name {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  color: #000; }
+
+.card-holster
+.card
+.bottom-half
+.bottom-bottom-container
+.font-details
+.creator {
+  letter-spacing: 0.4px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #cccccc; }
+
+.card-holster .card .bottom-half .eye-container {
+  background: #fff;
+  height: 70px; }
+
+.card-holster .card .bottom-half .eye-container .eye {
+  transition: all 300ms ease;
+  opacity: 0; }
+
+.card-holster .mouse-over-top .bottom-half {
+  -webkit-transform: translateY(135px);
+          transform: translateY(135px); }
+
+.card-holster .mouse-over-top .bottom-half .font-details {
+  opacity: 0; }
+
+.card-holster .mouse-over-top .copy-text {
+  -webkit-transform: translateY(0px) !important;
+          transform: translateY(0px) !important;
+  opacity: 1 !important; }
+
+.card-holster .mouse-over-bottom .top-half {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px); }
+
+.card-holster .mouse-over-bottom .bottom-half {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px); }
+
+.card-holster .mouse-over-bottom .eye {
+  opacity: 1 !important; }
+
+.palette-info {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-decoration: none;
+  position: absolute;
+  text-align: center;
+  bottom: 80px;
+  left: 50%;
+  opacity: 0; }
+
+.palette-info .colorset {
+  transition: -webkit-transform 100ms ease-out;
+  transition: transform 100ms ease-out;
+  transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+  margin: auto;
+  width: 160px;
+  height: 5px; }
+
+.palette-info .colorset .sweet-color {
+  width: 33px;
+  margin-left: -1px;
+  height: 5px;
+  float: left; }
+
+.palette-info:hover .colorset {
+  -webkit-transform: scaleX(1.3);
+          transform: scaleX(1.3); }
+
+.palette-info .name {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: bold;
+  padding-top: 14px;
+  font-size: 25px;
+  color: #000; }
+
+.palette-info .creator {
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  font-weight: bold;
+  padding-top: 4px;
+  font-size: 13px;
+  color: #ccc; }
+
+.the-i {
+  position: absolute;
+  margin-left: -3px;
+  z-index: 0;
+  bottom: 20px;
+  left: 50%; }
+
+footer {
+  -webkit-filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1));
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  bottom: 0px;
+  z-index: 50; }
+
+footer:hover .footer-item {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px); }
+
+footer .footer-item {
+  transition: -webkit-transform 200ms ease-out;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  margin-right: 60px;
+  margin-left: 60px;
+  overflow: hidden;
+  height: 100%;
+  z-index: 0; }
+
+footer .footer-item .footer-bottom {
+  padding-right: 30px;
+  padding-left: 30px;
+  background: #fff;
+  height: 70px; }
+
+footer .footer-item .footer-bottom .logo {
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  float: left;
+  margin-top: 9px;
+  display: block; }
+
+footer .footer-item .footer-bottom .logo span {
+  font-weight: normal;
+  color: #b2d4dc; }
+
+footer .footer-item .footer-bottom .about {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  letter-spacing: 0.5px;
+  position: absolute;
+  padding-top: 16px;
+  font-size: 12px;
+  left: 50%; }
+
+footer .footer-item .footer-bottom .about a {
+  text-decoration: none;
+  color: #bb84a6; }
+
+footer .footer-item .footer-bottom .about a:hover {
+  text-decoration: underline; }
+
+footer .top-dip-thingo {
+  height: 15px; }
+
+footer .the-rest {
+  background: #fff;
+  height: 100%; }
+
+footer .left-part,
+footer .right-part {
+  width: 50%;
+  height: 15px;
+  background: #fff; }
+
+footer .left-part {
+  margin-left: -23px;
+  float: left; }
+
+footer .right-part {
+  margin-right: -23px;
+  float: right; }
+
+footer svg {
+  float: left;
+  fill: #fff; }
+
+footer .share {
+  margin-top: 7px;
+  float: right; }
+
+footer .share .facebook,
+footer .share .twitter {
+  cursor: pointer; }
+
+footer .share .facebook {
+  margin-left: 6px; }
+
+.expander {
+  box-shadow: 0px 0px 1px 0px;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: -1px;
+  margin-top: -1px;
+  height: 2px;
+  width: 2px; }
+
+.expander.active {
+  -webkit-animation: expand 500ms;
+          animation: expand 500ms; }
+
+@-webkit-keyframes expand {
+  0% {
+    box-shadow: 0px 0px 1px 0px; }
+  100% {
+    box-shadow: 0px 0px 100px 500px;
+    opacity: 0; } }
+
+@keyframes expand {
+  0% {
+    box-shadow: 0px 0px 1px 0px; }
+  100% {
+    box-shadow: 0px 0px 100px 500px;
+    opacity: 0; } }
+
+@media only screen and (max-width: 1300px) {
+  .card-holster .card {
+    height: 390px;
+    width: 230px; }
+  .card-holster .card .top-half .font-container {
+    top: 70px; } }
+
+@media only screen and (max-width: 1200px) {
+  .card-holster .card {
+    height: 320px;
+    width: 200px; }
+  .card-holster .card .top-half .font-container {
+    top: 20px; }
+  .card-holster .card .top-half .font-container .sample-container.large {
+    bottom: 50px; }
+  .card-holster
+.card
+.top-half
+.font-container
+.sample-container.large
+.sample {
+    font-size: 65px; }
+  .card-holster .card .top-half .font-container .sample-container.small {
+    bottom: 5px; }
+  .card-holster
+.card
+.top-half
+.font-container
+.sample-container.small
+.sample {
+    font-size: 26px; }
+  .card-holster .card .top-half .hex-container .hex-centerer {
+    top: 110px; } }
+
+@media only screen and (max-width: 1129px) {
+  .footer-item .about {
+    padding-top: 10px !important; } }
+
+.comp-music {
+  width: 72px;
+  height: 86px;
+  position: fixed;
+  top: 206px;
+  left: 32px;
+  opacity: 0.8; }
+
+.comp-content {
+  height: 100%;
+  width: 100%; }
+
+.comp-content::before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background: url('shutterstock_793987759.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-filter: blur(3px);
+            filter: blur(3px); }
+</style><style>.comp-images[_ngcontent-c0] {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 48px; }
+
+.comp-happy-birthday[_ngcontent-c0] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170px; }
+
+.text[_ngcontent-c0] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  z-index: 10; }
+
+svg[_ngcontent-c0] {
+  width: 100%;
+  height: inherit; }
+
+svg[_ngcontent-c0]   text[_ngcontent-c0] {
+    text-anchor: middle; }
+
+svg[_ngcontent-c0]   #alpha[_ngcontent-c0] {
+    fill: #666666; }
+
+svg[_ngcontent-c0]   #title[_ngcontent-c0] {
+    letter-spacing: -2px;
+    font-size: 96px;
+    font-weight: 800; }
+
+svg[_ngcontent-c0]   #subtitle[_ngcontent-c0] {
+    letter-spacing: 8px;
+    font-size: 19px;
+    font-weight: 300;
+    text-transform: uppercase; }
+
+svg[_ngcontent-c0]   #base[_ngcontent-c0] {
+    fill: black;
+    -webkit-mask: url(#mask);
+            mask: url(#mask); }</style><style type="text/css">
+/*
+  @angular/flex-layout - workaround for possible browser quirk with mediaQuery listeners
+  see http://bit.ly/2sd4HMP
+*/
+@media (min-width: 600px), (max-width: 599px), (min-width: 960px), (max-width: 959px), (min-width: 1280px), (max-width: 1279px), (min-width: 1920px), (max-width: 1920px), (min-width: 0px) and (max-width: 599px), (min-width: 600px) and (max-width: 959px), (min-width: 960px) and (max-width: 1279px), (min-width: 1280px) and (max-width: 1919px), (min-width: 1920px) and (max-width: 5000px) {.fx-query-test{ }}
+</style></head>
+
+<body cz-shortcut-listen="true">
+  <app-root _nghost-c0="" ng-version="6.0.2"><div _ngcontent-c0="" class="comp-content" fxlayout="column" fxlayoutalign="end center" ng-reflect-layout="column" ng-reflect-align="end center" style="flex-direction: column; box-sizing: border-box; display: flex; max-width: 100%; place-content: center flex-end; align-items: center;"><div _ngcontent-c0="" class="comp-happy-birthday"><svg _ngcontent-c0=""><defs _ngcontent-c0=""><mask _ngcontent-c0="" height="100%" id="mask" width="100%" x="0" y="0"><rect _ngcontent-c0="" height="100%" id="alpha" width="100%" x="0" y="0"></rect><text _ngcontent-c0="" dy="103px" id="title" x="50%" y="0">Happy Birthday Amor!</text><text _ngcontent-c0="" dy="147px" id="subtitle" x="50%" y="0">Polvoestelar y amor de Villarrica ♥</text></mask></defs><rect _ngcontent-c0="" height="100%" id="base" width="100%" x="0" y="0"></rect></svg></div><div _ngcontent-c0="" class="comp-images"><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><div _ngcontent-c0="" class="card-holster"><div _ngcontent-c0="" class="outer-wrapper"><div _ngcontent-c0="" class="card front"><div _ngcontent-c0="" class="color-wrapper"><div _ngcontent-c0="" class="top-half"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><img _ngcontent-c0="" src="./cathyparada.com_files/irene.jpg"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-c0="" class="shine"></div></div></div></div></div></div><div _ngcontent-c0="" class="card-holster"><div _ngcontent-c0="" class="outer-wrapper"><div _ngcontent-c0="" class="card front"><div _ngcontent-c0="" class="color-wrapper"><div _ngcontent-c0="" class="top-half"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><img _ngcontent-c0="" src="./cathyparada.com_files/sofia.jpg"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-c0="" class="shine"></div></div></div></div></div></div><div _ngcontent-c0="" class="card-holster"><div _ngcontent-c0="" class="outer-wrapper"><div _ngcontent-c0="" class="card front"><div _ngcontent-c0="" class="color-wrapper"><div _ngcontent-c0="" class="top-half"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><img _ngcontent-c0="" src="./cathyparada.com_files/gabriel.jpg"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-c0="" class="shine"></div></div></div></div></div></div><div _ngcontent-c0="" class="card-holster"><div _ngcontent-c0="" class="outer-wrapper"><div _ngcontent-c0="" class="card front"><div _ngcontent-c0="" class="color-wrapper"><div _ngcontent-c0="" class="top-half"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><img _ngcontent-c0="" src="./cathyparada.com_files/pamela.jpg"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-c0="" class="shine"></div></div></div></div></div></div><div _ngcontent-c0="" class="card-holster"><div _ngcontent-c0="" class="outer-wrapper"><div _ngcontent-c0="" class="card front"><div _ngcontent-c0="" class="color-wrapper"><div _ngcontent-c0="" class="top-half"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><img _ngcontent-c0="" src="./cathyparada.com_files/mario.jpg"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-c0="" class="shine"></div></div></div></div></div></div><div _ngcontent-c0="" class="card-holster"><div _ngcontent-c0="" class="outer-wrapper"><div _ngcontent-c0="" class="card front"><div _ngcontent-c0="" class="color-wrapper"><div _ngcontent-c0="" class="top-half"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><img _ngcontent-c0="" src="./cathyparada.com_files/camilo.jpg"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-c0="" class="shine"></div></div></div></div></div></div></div><iframe _ngcontent-c0="" allow="autoplay" class="comp-music" frameborder="no" height="300" scrolling="no" src="./cathyparada.com_files/saved_resource.html" width="auto"></iframe></div></app-root>
+
+
+
+<script type="text/javascript" src="./cathyparada.com_files/runtime.js"></script><script type="text/javascript" src="./cathyparada.com_files/polyfills.js"></script><script type="text/javascript" src="./cathyparada.com_files/styles.js"></script><script type="text/javascript" src="./cathyparada.com_files/vendor.js"></script><script type="text/javascript" src="./cathyparada.com_files/main.js"></script></body></html>
