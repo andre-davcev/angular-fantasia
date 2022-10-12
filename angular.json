@@ -108,7 +108,7 @@
               "apps/fantasia/tsconfig.app.json",
               "apps/fantasia/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/fantasia/**"]
+            "exclude": ["**/node_modules/**", "!apps/fantasia/**/*"]
           }
         }
       },
@@ -130,7 +130,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["apps/fantasia-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/fantasia-e2e/**"]
+            "exclude": ["**/node_modules/**", "!apps/fantasia-e2e/**/*"]
           }
         }
       },
@@ -156,7 +156,7 @@
               "libs/blueprint/tsconfig.lib.json",
               "libs/blueprint/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/blueprint/**"]
+            "exclude": ["**/node_modules/**", "!libs/blueprint/**/*"]
           }
         },
         "test": {
