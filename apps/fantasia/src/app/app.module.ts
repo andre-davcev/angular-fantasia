@@ -23,33 +23,26 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    HttpClientModule,
-    ModuleComponentMenu,
-
-    RouterModule.forRoot(RoutesApp, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' }),
-
-    NgxsRouterPluginModule.forRoot(),
-    NgxsModule.forRoot([StateApp]),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
-  ],
-
-  declarations: [ComponentApp],
-
-  entryComponents: [ComponentApp],
-
-  providers: []
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FlexLayoutModule,
+        HttpClientModule,
+        ModuleComponentMenu,
+        RouterModule.forRoot(RoutesApp, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' }),
+        NgxsRouterPluginModule.forRoot(),
+        NgxsModule.forRoot([StateApp]),
+        NgxsReduxDevtoolsPluginModule.forRoot(),
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
+    ],
+    declarations: [ComponentApp],
+    providers: []
 })
 export class AppModule {
   constructor(private applicationRef: ApplicationRef) {}

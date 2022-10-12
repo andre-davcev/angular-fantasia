@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "",
   "projects": {
     "blueprint": {
       "root": "libs/blueprint",
@@ -15,19 +14,6 @@
             "tsConfig": "libs/blueprint/tsconfig.lib.json",
             "project": "libs/blueprint/ng-package.json",
             "buildableProjectDepsInPackageJsonType": "dependencies"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/blueprint/tsconfig.lib.json",
-              "libs/blueprint/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/blueprint/**/*"
-            ]
           }
         },
         "test": {
@@ -46,7 +32,8 @@
         "@nrwl/schematics:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "fantasia": {
       "root": "apps/fantasia",
@@ -157,22 +144,10 @@
           "outputs": [
             "coverage/apps/fantasia"
           ]
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/fantasia/tsconfig.app.json",
-              "apps/fantasia/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/fantasia/**/*"
-            ]
-          }
         }
       },
-      "prefix": "app"
+      "prefix": "app",
+      "tags": []
     },
     "fantasia-e2e": {
       "root": "apps/fantasia-e2e",
@@ -185,21 +160,13 @@
             "protractorConfig": "apps/fantasia-e2e/protractor.conf.js",
             "devServerTarget": "fantasia:serve"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/fantasia-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/fantasia-e2e/**/*"
-            ]
-          }
         }
       },
-      "prefix": "app"
+      "prefix": "app",
+      "tags": [],
+      "implicitDependencies": [
+        "fantasia"
+      ]
     }
   }
 }

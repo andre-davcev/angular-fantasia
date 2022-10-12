@@ -7,30 +7,17 @@
     "nx.json": "*",
     "tsconfig.base.json": "*"
   },
-  "projects": {
-    "blueprint": {
-      "tags": []
-    },
-    "fantasia": {
-      "tags": []
-    },
-    "fantasia-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "fantasia"
-      ]
-    }
-  },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
           "build",
           "lint",
           "test",
           "e2e"
-        ]
+        ],
+        "parallel": 1
       }
     }
   },

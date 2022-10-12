@@ -13,7 +13,6 @@ const routes: Routes = [
         CommonModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [PageStarcraft],
-    entryComponents: [PageStarcraft]
+    declarations: [PageStarcraft]
 })
 export class ModulePageStarcraft { }

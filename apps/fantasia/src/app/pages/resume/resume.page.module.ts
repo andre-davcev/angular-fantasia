@@ -13,7 +13,6 @@ const routes: Routes = [
         CommonModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [PageResume],
-    entryComponents: [PageResume]
+    declarations: [PageResume]
 })
 export class ModulePageResume { }

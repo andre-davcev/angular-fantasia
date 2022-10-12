@@ -12,7 +12,7 @@ import {
   ActionAppLoad,
   ActionAppNavToHome,
   ActionAppNavToChild,
-  ActionAppWatchMediaBreakpoints
+  ActionAppWatchMediaBreakpoints,
 } from './app.actions';
 import { StateAppModel } from './app.state.model';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
@@ -24,13 +24,12 @@ import { RoutesApp } from '@fantasia/app/app.routes';
 import { SpectatorService, createService } from '@ngneat/spectator/jest';
 import {
   createServiceFactory,
-  SpectatorServiceFactory
+  SpectatorServiceFactory,
 } from '@ngneat/spectator/jest';
 describe('StateApp', () => {
   let store: SpectatorService<Store>;
-  const createStore: SpectatorServiceFactory<Store> = createServiceFactory<
-    Store
-  >(Store);
+  const createStore: SpectatorServiceFactory<Store> =
+    createServiceFactory<Store>(Store);
 
   let router: Router;
 
@@ -48,15 +47,16 @@ describe('StateApp', () => {
       imports: [
         RouterTestingModule.withRoutes(RoutesApp),
         NgxsModule.forRoot([StateApp]),
-        NgxsRouterPluginModule.forRoot()
+        NgxsRouterPluginModule.forRoot(),
       ],
-      providers: [{ provide: MediaObserver, useClass: MockMediaObserver }]
+      providers: [{ provide: MediaObserver, useClass: MockMediaObserver }],
+      teardown: { destroyAfterEach: false },
     }).compileComponents();
 
     router = TestBed.get(Router);
     store = createStore();
     store.service.reset({
-      [StateAppOptions.name as string]: StateAppOptions.defaults
+      [StateAppOptions.name as string]: StateAppOptions.defaults,
     });
   }));
 
@@ -85,15 +85,15 @@ describe('StateApp', () => {
     store.service.reset({
       [StateAppOptions.name as string]: {
         ...StateAppOptions.defaults,
-        home: false
-      }
+        home: false,
+      },
     });
 
     jest.spyOn(router, 'navigate');
 
     store.service.dispatch([
       new ActionAppLoad(AppList),
-      new ActionAppNavToHome()
+      new ActionAppNavToHome(),
     ]);
 
     store.service
@@ -102,7 +102,7 @@ describe('StateApp', () => {
         expect(StateApp.home(state)).toBe(true);
         expect(StateApp.loading(state)).toBe(true);
         expect(router.navigate).toBeCalledWith(['/'], {
-          queryParams: undefined
+          queryParams: undefined,
         });
       });
   }));
@@ -112,7 +112,7 @@ describe('StateApp', () => {
 
     store.service.dispatch([
       new ActionAppLoad(AppList),
-      new ActionAppNavToChild(App.Resume)
+      new ActionAppNavToChild(App.Resume),
     ]);
 
     store.service
@@ -121,7 +121,7 @@ describe('StateApp', () => {
         expect(StateApp.home(state)).toBe(false);
         expect(StateApp.loading(state)).toBe(true);
         expect(router.navigate).toBeCalledWith([App.Resume], {
-          queryParams: undefined
+          queryParams: undefined,
         });
       });
   }));
@@ -131,7 +131,7 @@ describe('StateApp', () => {
 
     store.service.dispatch([
       new ActionAppLoad(AppList),
-      new ActionAppNavToChild(App.Firefly)
+      new ActionAppNavToChild(App.Firefly),
     ]);
 
     store.service
