@@ -1,7 +1,9 @@
+const { getJestProjects } = require('@nrwl/jest');
+
 module.exports = {
   testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)'],
   transform: {
-    '^.+\\.(ts|js|html)$': 'ts-jest'
+    '^.+\\.(ts|js|html)$': 'ts-jest',
   },
   resolver: '@nrwl/jest/plugins/resolver',
   moduleFileExtensions: ['ts', 'js', 'html'],
@@ -11,7 +13,8 @@ module.exports = {
       branches: 98,
       functions: 98,
       lines: 98,
-      statements: 98
-    }
-  }
+      statements: 98,
+    },
+  },
+  projects: getJestProjects(),
 };

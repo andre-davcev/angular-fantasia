@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fantasia/app": ["apps/fantasia/src/index.ts"],
-      "@fantasia/app/*": ["apps/fantasia/src/app/*"],
       "@blueprint/*": ["libs/*"],
-      "@blueprint/core": ["libs/core/index.ts"]
+      "@blueprint/core": ["libs/core/index.ts"],
+      "@fantasia/app": ["apps/fantasia/src/index.ts"],
+      "@fantasia/app/*": ["apps/fantasia/src/app/*"]
     },
     "rootDir": "."
   },

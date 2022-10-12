@@ -3,6 +3,51 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
+    "blueprint": {
+      "root": "libs/blueprint",
+      "sourceRoot": "libs/blueprint/src",
+      "projectType": "library",
+      "prefix": "blu",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/blueprint/tsconfig.lib.json",
+            "project": "libs/blueprint/ng-package.json",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/blueprint/tsconfig.lib.json",
+              "libs/blueprint/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/blueprint/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/blueprint/jest.config.js",
+            "tsConfig": "libs/blueprint/tsconfig.spec.json",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/blueprint"
+          ]
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
     "fantasia": {
       "root": "apps/fantasia",
       "sourceRoot": "apps/fantasia/src",
@@ -11,7 +56,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/apps/fantasia",
             "index": "apps/fantasia/src/index.html",
             "main": "apps/fantasia/src/main.ts",
@@ -32,7 +76,13 @@
               "libs/sass/blueprint-reset.scss",
               "apps/fantasia/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -46,7 +96,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -60,7 +109,8 @@
           },
           "outputs": [
             "{options.outputPath}"
-          ]
+          ],
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -150,51 +200,6 @@
         }
       },
       "prefix": "app"
-    },
-    "blueprint": {
-      "root": "libs/blueprint",
-      "sourceRoot": "libs/blueprint/src",
-      "projectType": "library",
-      "prefix": "blu",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/blueprint/tsconfig.lib.json",
-            "project": "libs/blueprint/ng-package.json",
-            "buildableProjectDepsInPackageJsonType": "dependencies"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/blueprint/tsconfig.lib.json",
-              "libs/blueprint/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/blueprint/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/blueprint/jest.config.js",
-            "tsConfig": "libs/blueprint/tsconfig.spec.json",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/blueprint"
-          ]
-        }
-      },
-      "schematics": {
-        "@nrwl/schematics:component": {
-          "styleext": "scss"
-        }
-      }
     }
   }
 }
