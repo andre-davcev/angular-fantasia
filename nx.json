@@ -3,9 +3,9 @@
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
-    "tsconfig.json": "*",
     "tslint.json": "*",
-    "nx.json": "*"
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
   },
   "projects": {
     "fantasia": {
@@ -13,7 +13,9 @@
     },
     "fantasia-e2e": {
       "tags": [],
-      "implicitDependencies": ["fantasia"]
+      "implicitDependencies": [
+        "fantasia"
+      ]
     },
     "blueprint": {
       "tags": []
@@ -23,8 +25,39 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
+    }
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    },
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "fantasia",
+  "generators": {
+    "@schematics/angular": {
+      "styleExt": "scss"
+    },
+    "@nrwl/schematics:library": {
+      "unitTestRunner": "jest",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
     }
   }
 }

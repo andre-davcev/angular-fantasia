@@ -24,7 +24,9 @@
                 "apps/fantasia/src/styles"
               ]
             },
-            "assets": ["apps/fantasia/src/assets"],
+            "assets": [
+              "apps/fantasia/src/assets"
+            ],
             "styles": [
               "node_modules/normalize.css/normalize.css",
               "libs/sass/blueprint-reset.scss",
@@ -108,7 +110,10 @@
               "apps/fantasia/tsconfig.app.json",
               "apps/fantasia/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/fantasia/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/fantasia/**/*"
+            ]
           }
         }
       },
@@ -129,8 +134,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/fantasia-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/fantasia-e2e/**/*"]
+            "tsConfig": [
+              "apps/fantasia-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/fantasia-e2e/**/*"
+            ]
           }
         }
       },
@@ -146,7 +156,8 @@
           "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/blueprint/tsconfig.lib.json",
-            "project": "libs/blueprint/ng-package.json"
+            "project": "libs/blueprint/ng-package.json",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           }
         },
         "lint": {
@@ -156,7 +167,10 @@
               "libs/blueprint/tsconfig.lib.json",
               "libs/blueprint/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/blueprint/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/blueprint/**/*"
+            ]
           }
         },
         "test": {
@@ -173,29 +187,6 @@
           "styleext": "scss"
         }
       }
-    }
-  },
-  "defaultProject": "fantasia",
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false
-    },
-    "defaultCollection": "@nrwl/angular"
-  },
-  "schematics": {
-    "@schematics/angular": {
-      "styleExt": "scss"
-    },
-    "@nrwl/schematics:library": {
-      "unitTestRunner": "jest",
-      "framework": "angular"
-    },
-    "@nrwl/schematics:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "protractor"
-    },
-    "@nrwl/schematics:node-application": {
-      "framework": "express"
     }
   }
 }

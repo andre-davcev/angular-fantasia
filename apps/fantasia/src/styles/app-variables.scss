@@ -9,6 +9,6 @@ $app-color-warn:        mat-palette($mat-red);
 $app-color-theme:       mat-light-theme($app-color-primary, $app-color-accent, $app-color-warn);
 
 $app-font-lobster-name:               'Lobster';
-$app-font-lobster-path-regular:       'assets/fonts/lobster/Lobster-Regular.ttf';
+$app-font-lobster-path-regular:       '~assets/fonts/lobster/Lobster-Regular.ttf';
 
 $app-color-white: #FFFFFF;
