@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
   name: 'fantasia',
-  preset: '../../jest.config.js',
+  preset: 'jest-preset-angular',
   coverageDirectory: '../../coverage/apps/fantasia/',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',

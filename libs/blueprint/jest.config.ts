@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
   name: 'blueprint',
-  preset: '../../jest.config.js',
+  preset: 'jest-preset-angular',
   coverageDirectory: '../../coverage/libs/blueprint',
 };
