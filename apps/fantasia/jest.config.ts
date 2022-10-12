@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   name: 'fantasia',
   preset: '../../jest.config.js',
   coverageDirectory: '../../coverage/apps/fantasia/',

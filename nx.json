@@ -11,12 +11,7 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "parallel": 1
       }
     }
@@ -27,8 +22,7 @@
   "cli": {
     "warnings": {
       "typescriptMismatch": false
-    },
-    "defaultCollection": "@nrwl/angular"
+    }
   },
   "defaultProject": "fantasia",
   "generators": {
@@ -47,12 +41,10 @@
       "framework": "express"
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
   }
 }
