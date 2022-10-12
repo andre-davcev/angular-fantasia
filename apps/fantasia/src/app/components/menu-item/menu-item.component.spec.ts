@@ -1,7 +1,7 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { async } from '@angular/core/testing';
+import { waitForAsync } from '@angular/core/testing';
 import { NgxsModule, Store } from '@ngxs/store';
 import { TranslateModule } from '@ngx-translate/core';
 import {
@@ -51,7 +51,7 @@ describe('ComponentMenuItem', () => {
     declareComponent: false
   });
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     store = createStore();
     app = createApp();
 

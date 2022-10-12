@@ -1,5 +1,5 @@
 import { Store, NgxsModule } from '@ngxs/store';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
@@ -43,7 +43,7 @@ describe('StateApp', () => {
       return of([{ mqAlias: MaterialBreakpoint.ExtraSmall }]);
     }
   }
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes(RoutesApp),
@@ -60,7 +60,7 @@ describe('StateApp', () => {
     });
   }));
 
-  it('should load app data', async(() => {
+  it('should load app data', waitForAsync(() => {
     store.service.dispatch(new ActionAppLoad(AppList));
 
     store.service
@@ -81,7 +81,7 @@ describe('StateApp', () => {
       });
   }));
 
-  it('should navigate to home route', async(() => {
+  it('should navigate to home route', waitForAsync(() => {
     store.service.reset({
       [StateAppOptions.name as string]: {
         ...StateAppOptions.defaults,
@@ -107,7 +107,7 @@ describe('StateApp', () => {
       });
   }));
 
-  it('should navigate to child route', async(() => {
+  it('should navigate to child route', waitForAsync(() => {
     jest.spyOn(router, 'navigate');
 
     store.service.dispatch([
@@ -126,7 +126,7 @@ describe('StateApp', () => {
       });
   }));
 
-  it('should open window tab', async(() => {
+  it('should open window tab', waitForAsync(() => {
     jest.spyOn(window, 'open');
 
     store.service.dispatch([
@@ -144,7 +144,7 @@ describe('StateApp', () => {
       });
   }));
 
-  it('should default breakpoint state', async(() => {
+  it('should default breakpoint state', waitForAsync(() => {
     store.service
       .selectOnce((state: any) => state[StateAppOptions.name as string])
       .subscribe((state: StateAppModel) => {
@@ -152,7 +152,7 @@ describe('StateApp', () => {
       });
   }));
 
-  it('should change breakpoint alias', async(() => {
+  it('should change breakpoint alias', waitForAsync(() => {
     store.service.dispatch(new ActionAppWatchMediaBreakpoints());
 
     store.service

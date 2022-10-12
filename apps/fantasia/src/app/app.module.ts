@@ -30,7 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ModuleComponentMenu,
 
-    RouterModule.forRoot(RoutesApp, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(RoutesApp, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' }),
 
     NgxsRouterPluginModule.forRoot(),
     NgxsModule.forRoot([StateApp]),

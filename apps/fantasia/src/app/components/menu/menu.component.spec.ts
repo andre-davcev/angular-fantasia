@@ -2,7 +2,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
-import { async } from '@angular/core/testing';
+import { waitForAsync } from '@angular/core/testing';
 import { NgxsModule, Store } from '@ngxs/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
@@ -61,7 +61,7 @@ describe('ComponentMenu', () => {
     expect(spectator.component).toBeTruthy();
   });
 
-  it('should create grid', async(() => {
+  it('should create grid', waitForAsync(() => {
     store.service.dispatch(new ActionAppNavToHome());
     const breakpoint: MaterialBreakpoint = MaterialBreakpoint.Large;
     Object.defineProperty(spectator.component, 'breakpoint$', {
@@ -95,7 +95,7 @@ describe('ComponentMenu', () => {
     });
   }));
 
-  it('should have 1 column', async(() => {
+  it('should have 1 column', waitForAsync(() => {
     store.service.dispatch(new ActionAppNavToChild(App.Resume));
     const breakpoint: MaterialBreakpoint = MaterialBreakpoint.Large;
     Object.defineProperty(spectator.component, 'breakpoint$', {
@@ -114,7 +114,7 @@ describe('ComponentMenu', () => {
     });
   }));
 
-  it('should navigate home', async(() => {
+  it('should navigate home', waitForAsync(() => {
     store.service.dispatch(new ActionAppNavToChild(App.Resume));
     spectator.fixture.detectChanges();
 
