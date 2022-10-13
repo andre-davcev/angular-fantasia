@@ -1,12 +1,12 @@
 import { RouterTestingModule } from '@angular/router/testing';
-import { Spectator, createTestComponentFactory } from '@ngneat/spectator/jest';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
 import { ModulePageResume, PageResume } from '@fantasia/app';
 
 describe('PageResume', () => {
   let spectator: Spectator<PageResume>;
 
-  const createComponent = createTestComponentFactory({
+  const createComponent = createComponentFactory({
     component: PageResume,
     imports: [RouterTestingModule, ModulePageResume],
     declareComponent: false

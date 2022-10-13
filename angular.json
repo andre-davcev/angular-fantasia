@@ -20,18 +20,16 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/blueprint/jest.config.ts",
-            "tsConfig": "libs/blueprint/tsconfig.spec.json",
+            "tsconfig": "libs/blueprint/tsconfig.spec.json",
             "passWithNoTests": true
-          },
-          "outputs": ["coverage/libs/blueprint"]
+          }
         }
       },
       "schematics": {
         "@nrwl/schematics:component": {
           "styleext": "scss"
         }
-      },
-      "tags": []
+      }
     },
     "fantasia": {
       "root": "apps/fantasia",
@@ -90,7 +88,6 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -115,8 +112,8 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/fantasia/jest.config.ts",
-            "tsConfig": "apps/fantasia/tsconfig.spec.json",
-            "setupFile": "apps/fantasia/src/test-setup.ts",
+            "tsconfig": "<rootDir>/tsconfig.spec.json",
+            "setupFiles": ["<rootDir>/src/test-setup.ts"],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "node_modules",
@@ -134,12 +131,10 @@
               "apps/fantasia/src/favicon.ico"
             ],
             "passWithNoTests": true
-          },
-          "outputs": ["coverage/apps/fantasia"]
+          }
         }
       },
-      "prefix": "app",
-      "tags": []
+      "prefix": "app"
     },
     "fantasia-e2e": {
       "root": "apps/fantasia-e2e",
@@ -154,9 +149,7 @@
           }
         }
       },
-      "prefix": "app",
-      "tags": [],
-      "implicitDependencies": ["fantasia"]
+      "prefix": "app"
     }
   }
 }

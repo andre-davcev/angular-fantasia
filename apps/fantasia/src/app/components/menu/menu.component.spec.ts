@@ -8,12 +8,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { take } from 'rxjs/operators';
 import {
-  createTestComponentFactory,
+  createComponentFactory,
   Spectator,
   SpectatorService,
   SpectatorServiceFactory,
   createServiceFactory
-} from '@ngneat/spectator/jest';
+} from '@ngneat/spectator';
 
 import {
   AppList,
@@ -37,7 +37,7 @@ describe('ComponentMenu', () => {
 
   let spectator: Spectator<ComponentMenu>;
 
-  const createComponent = createTestComponentFactory<ComponentMenu>({
+  const createComponent = createComponentFactory<ComponentMenu>({
     component: ComponentMenu,
     imports: [
       ModuleComponentMenu,

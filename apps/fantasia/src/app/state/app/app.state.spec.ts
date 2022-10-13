@@ -16,16 +16,14 @@ import {
 } from './app.actions';
 import { StateAppModel } from './app.state.model';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
-import { App } from '@fantasia/app';
+import { App, MaterialBreakpoint, RoutesApp } from '@fantasia/app';
 import { MediaObserver } from '@angular/flex-layout';
-import { MaterialBreakpoint } from '@fantasia/app/enums';
 import { of } from 'rxjs';
-import { RoutesApp } from '@fantasia/app/app.routes';
-import { SpectatorService, createService } from '@ngneat/spectator/jest';
+import { SpectatorService } from '@ngneat/spectator';
 import {
   createServiceFactory,
   SpectatorServiceFactory,
-} from '@ngneat/spectator/jest';
+} from '@ngneat/spectator';
 describe('StateApp', () => {
   let store: SpectatorService<Store>;
   const createStore: SpectatorServiceFactory<Store> =

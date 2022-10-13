@@ -1,6 +1,6 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Spectator, createTestComponentFactory } from '@ngneat/spectator/jest';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
 import { AppModule } from './app.module';
 import { ComponentApp } from './app.component';
@@ -8,7 +8,7 @@ import { ComponentApp } from './app.component';
 describe('ComponentApp', () => {
   let spectator: Spectator<ComponentApp>;
 
-  const createComponent = createTestComponentFactory({
+  const createComponent = createComponentFactory({
     component: ComponentApp,
     imports: [RouterTestingModule, AppModule],
     providers: [{ provide: APP_BASE_HREF, useValue: '/' }],

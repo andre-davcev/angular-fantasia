@@ -52,7 +52,7 @@
     "unified-signatures": true,
     "variable-name": false,
     "nx-enforce-module-boundaries": [
-      true,
+      false,
       {
         "allow": [],
         "depConstraints": [

@@ -1,9 +1,13 @@
-import { createService } from '@ngneat/spectator/jest';
+import { createServiceFactory } from '@ngneat/spectator/jest';
 
 import { AppList, App, AppProperties, ServiceApp } from '@fantasia/app';
+import { SpectatorService } from '@ngneat/spectator';
 
 describe('ServiceApp', () => {
-  const spectator = createService<ServiceApp>(ServiceApp);
+  let spectator: SpectatorService<ServiceApp>;
+  const createService = createServiceFactory(ServiceApp);
+
+  beforeEach(() => spectator = createService());
 
   it('should be created', () => {
     expect(spectator.service).toBeTruthy();

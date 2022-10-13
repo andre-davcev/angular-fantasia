@@ -6,12 +6,11 @@ import { NgxsModule, Store } from '@ngxs/store';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   Spectator,
-  createTestComponentFactory,
-  createService,
+  createComponentFactory,
   SpectatorService,
   SpectatorServiceFactory,
   createServiceFactory
-} from '@ngneat/spectator/jest';
+} from '@ngneat/spectator';
 
 import {
   ServiceApp,
@@ -39,7 +38,7 @@ describe('ComponentMenuItem', () => {
   let spectator: Spectator<ComponentMenuItem>;
   let element: HTMLElement;
 
-  const createComponent = createTestComponentFactory<ComponentMenuItem>({
+  const createComponent = createComponentFactory<ComponentMenuItem>({
     component: ComponentMenuItem,
     imports: [
       ModuleMenuItem,

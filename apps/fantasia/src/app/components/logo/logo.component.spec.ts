@@ -1,12 +1,12 @@
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { Spectator, createTestComponentFactory } from '@ngneat/spectator/jest';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
 import { Animation, ComponentLogo, ModuleComponentLogo } from '@fantasia/app';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LogoComponent', () => {
   let spectator: Spectator<ComponentLogo>;
 
-  const createComponent = createTestComponentFactory({
+  const createComponent = createComponentFactory({
     component: ComponentLogo,
     imports: [ModuleComponentLogo, NoopAnimationsModule],
     declareComponent: false
