@@ -1,7 +1,6 @@
 const { getJestProjects } = require('@nrwl/jest');
 
 export default {
-  rootDir: "./",
   testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)'],
   transform: {
     '^.+\\.(ts|js|html)$': 'ts-jest',

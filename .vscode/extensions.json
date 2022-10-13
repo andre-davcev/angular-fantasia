@@ -28,6 +28,8 @@
     "mhutchie.git-graph",
     "humao.rest-client",
     "pnp.polacode",
-    "wayou.vscode-todo-highlight"
+    "wayou.vscode-todo-highlight",
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint"
   ]
 }

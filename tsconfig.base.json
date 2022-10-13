@@ -19,8 +19,7 @@
       "@blueprint/core": ["libs/core/index.ts"],
       "@fantasia/app": ["apps/fantasia/src/index.ts"],
       "@fantasia/app/*": ["apps/fantasia/src/app/*"]
-    },
-    "rootDir": "."
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
