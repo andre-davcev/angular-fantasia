@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { AppProperties } from '@fantasia/app/models';
-import { StateApp, ActionAppNavToHome } from '@fantasia/app/state';
-import { MaterialBreakpoint } from '@fantasia/app/enums';
+import { MenuItemComponentModule } from '../menu-item';
+import { LogoComponentModule } from '../logo';
+import { AppProperties } from '../../models';
+import { StateApp, ActionAppNavToHome } from '../../state';
+import { MaterialBreakpoint } from '../../enums';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class ComponentMenu implements OnInit {
+export class MenuComponent implements OnInit {
   @Select(StateApp.apps) apps$: Observable<Array<AppProperties>>;
   @Select(StateApp.home) home$: Observable<boolean>;
   @Select(StateApp.mediaBreakpoint) breakpoint$: Observable<MaterialBreakpoint>;
@@ -46,3 +53,18 @@ export class ComponentMenu implements OnInit {
     this.store.dispatch(new ActionAppNavToHome());
   }
 }
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule,
+    FlexLayoutModule,
+    MatGridListModule,
+    MenuItemComponentModule,
+    LogoComponentModule
+  ],
+
+  declarations: [MenuComponent],
+  exports: [MenuComponent]
+})
+export class MenuComponentModule { }

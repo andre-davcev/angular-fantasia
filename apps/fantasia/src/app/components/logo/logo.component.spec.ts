@@ -1,14 +1,14 @@
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
-import { Animation, ComponentLogo, ModuleComponentLogo } from '@fantasia/app';
+import { Animation, LogoComponent, LogoComponentModule } from '@fantasia/app';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LogoComponent', () => {
-  let spectator: Spectator<ComponentLogo>;
+  let spectator: Spectator<LogoComponent>;
 
   const createComponent = createComponentFactory({
-    component: ComponentLogo,
-    imports: [ModuleComponentLogo, NoopAnimationsModule],
+    component: LogoComponent,
+    imports: [LogoComponentModule, NoopAnimationsModule],
     declareComponent: false
   });
 

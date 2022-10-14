@@ -1,24 +1,24 @@
 import { Route } from '@angular/router';
 
-import { RoutesApp } from './app.routes';
+import { AppRoutes } from './app.routes';
 import { App } from './enums';
-import { ModuleComponentMain } from './components';
-import { ModulePageResume, ModulePageStarcraft } from './pages';
+import { MainComponentModule } from './components';
+import { ResumePageComponentModule, StarcraftPageComponentModule } from './pages';
 
 describe('RoutesApp', () => {
   it('should set route modules', () => {
-    const routeRoot: Route = RoutesApp.find(
+    const routeRoot: Route | undefined = AppRoutes.find(
       (route: Route) => route.path === App.Root
     );
-    const routeResume: Route = RoutesApp.find(
+    const routeResume: Route | undefined = AppRoutes.find(
       (route: Route) => route.path === App.Resume
     );
-    const routeStarcraft: Route = RoutesApp.find(
+    const routeStarcraft: Route | undefined = AppRoutes.find(
       (route: Route) => route.path === App.Starcraft
     );
 
-    expect((routeRoot.loadChildren as any)()).toBe(ModuleComponentMain);
-    expect((routeResume.loadChildren as any)()).toBe(ModulePageResume);
-    expect((routeStarcraft.loadChildren as any)()).toBe(ModulePageStarcraft);
+    expect((routeRoot?.loadChildren as any)()).toBe(MainComponentModule);
+    expect((routeResume?.loadChildren as any)()).toBe(ResumePageComponentModule);
+    expect((routeStarcraft?.loadChildren as any)()).toBe(StarcraftPageComponentModule);
   });
 });

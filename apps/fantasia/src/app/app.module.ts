@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DoBootstrap, NgModule } from '@angular/core';
 import { ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,9 +13,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { StateApp } from '@fantasia/app/state';
 
-import { RoutesApp } from './app.routes';
-import { ComponentApp } from './app.component';
-import { ModuleComponentMenu } from './components';
+import { AppRoutes } from './app.routes';
+import { AppComponent } from './app.component';
+import { MenuComponentModule } from './components';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -28,8 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserAnimationsModule,
         FlexLayoutModule,
         HttpClientModule,
-        ModuleComponentMenu,
-        RouterModule.forRoot(RoutesApp, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' }),
+        MenuComponentModule,
+        RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' }),
         NgxsRouterPluginModule.forRoot(),
         NgxsModule.forRoot([StateApp]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
@@ -41,13 +41,13 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         })
     ],
-    declarations: [ComponentApp],
-    providers: []
+    declarations: [AppComponent],
+    exports: [AppComponent]
 })
-export class AppModule {
+export class AppComponentModule implements DoBootstrap {
   constructor(private applicationRef: ApplicationRef) {}
 
   public ngDoBootstrap(): void {
-    this.applicationRef.bootstrap(ComponentApp);
+    this.applicationRef.bootstrap(AppComponent);
   }
 }

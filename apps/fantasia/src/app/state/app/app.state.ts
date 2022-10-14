@@ -6,7 +6,8 @@ import {
   NavigationStart,
   NavigationCancel,
   NavigationError,
-  NavigationEnd
+  NavigationEnd,
+  Event
 } from '@angular/router';
 
 import { AppProperties } from '@fantasia/app/models';
@@ -22,7 +23,7 @@ import {
 } from './app.actions';
 import { AppList } from '@fantasia/app/constants';
 import { App } from '@fantasia/app/enums';
-import { ServiceApp } from '@fantasia/app/services';
+import { AppService } from '@fantasia/app/services';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { tap } from 'rxjs/operators';
 import { MaterialBreakpoint } from '@fantasia/app/enums/material-breakpoint.enum';
@@ -45,7 +46,7 @@ export class StateApp {
   @Selector() static apps(state: StateAppModel): Array<AppProperties> {
     const appLookup: Record<App, AppProperties> = StateApp.appLookup(state);
 
-    return ServiceApp.toArray(appLookup);
+    return AppService.toArray(appLookup);
   }
   @Selector() static mediaChanges(state: StateAppModel): Array<MediaChange> {
     return state.mediaChanges;
@@ -53,7 +54,7 @@ export class StateApp {
   @Selector() static mediaChangesFound(state: StateAppModel): boolean {
     return StateApp.mediaChanges(state).length > 0;
   }
-  @Selector() static mediaBreakpoint(state: StateAppModel): MaterialBreakpoint {
+  @Selector() static mediaBreakpoint(state: StateAppModel): MaterialBreakpoint | undefined {
     return StateApp.mediaChangesFound(state)
       ? (state.mediaChanges[0].mqAlias as MaterialBreakpoint)
       : undefined;
@@ -61,7 +62,7 @@ export class StateApp {
 
   constructor(
     private router: Router,
-    private app: ServiceApp,
+    private app: AppService,
     private mediaObserver: MediaObserver
   ) {}
 
@@ -91,7 +92,7 @@ export class StateApp {
     { payload }: ActionAppNavToChild
   ) {
     const appProperties: AppProperties = StateApp.appLookup(getState())[
-      payload
+      payload as App
     ];
 
     if (appProperties) {
@@ -113,23 +114,24 @@ export class StateApp {
 
   @Action(ActionAppWatchRouterEvents, { cancelUncompleted: true })
   watchRouterEvents({ patchState }: StateContext<StateAppModel>) {
-    this.router.events.subscribe((routerEvent: RouterEvent) => {
-      if (routerEvent instanceof NavigationStart) {
+    return this.router.events.pipe(
+      tap((event: Event) => {
+      if (event instanceof NavigationStart) {
         patchState({ loading: true });
       } else if (
-        routerEvent instanceof NavigationCancel ||
-        routerEvent instanceof NavigationError ||
-        routerEvent instanceof NavigationEnd
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError ||
+        event instanceof NavigationEnd
       ) {
         patchState({ loading: false });
       }
-    });
+    }));
   }
 
   @Action(ActionAppWatchMediaBreakpoints, { cancelUncompleted: true })
   watchMediaBreakpoints({ patchState }: StateContext<StateAppModel>) {
-    const mqAlias: string = Object.keys(MaterialBreakpoint)
-      .map((key: string) => MaterialBreakpoint[key])
+    const mqAlias: string | undefined = (Object.keys(MaterialBreakpoint) as Array<keyof typeof MaterialBreakpoint>)
+      .map((key: keyof typeof MaterialBreakpoint) => MaterialBreakpoint[key])
       .find((alias: string) => this.mediaObserver.isActive(alias));
 
     patchState({ mediaChanges: [{ mqAlias } as MediaChange] });

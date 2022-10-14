@@ -16,7 +16,7 @@ import {
 } from './app.actions';
 import { StateAppModel } from './app.state.model';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
-import { App, MaterialBreakpoint, RoutesApp } from '@fantasia/app';
+import { App, MaterialBreakpoint, AppRoutes } from '@fantasia/app';
 import { MediaObserver } from '@angular/flex-layout';
 import { of } from 'rxjs';
 import { SpectatorService } from '@ngneat/spectator';
@@ -43,7 +43,7 @@ describe('StateApp', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes(RoutesApp),
+        RouterTestingModule.withRoutes(AppRoutes),
         NgxsModule.forRoot([StateApp]),
         NgxsRouterPluginModule.forRoot(),
       ],

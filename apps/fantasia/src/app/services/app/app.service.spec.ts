@@ -1,11 +1,11 @@
 import { createServiceFactory } from '@ngneat/spectator/jest';
 
-import { AppList, App, AppProperties, ServiceApp } from '@fantasia/app';
+import { AppList, App, AppProperties, AppService } from '@fantasia/app';
 import { SpectatorService } from '@ngneat/spectator';
 
-describe('ServiceApp', () => {
-  let spectator: SpectatorService<ServiceApp>;
-  const createService = createServiceFactory(ServiceApp);
+describe('AppService', () => {
+  let spectator: SpectatorService<AppService>;
+  const createService = createServiceFactory(AppService);
 
   beforeEach(() => spectator = createService());
 
@@ -19,7 +19,7 @@ describe('ServiceApp', () => {
     );
 
     const original: AppProperties = AppList[0];
-    const app: AppProperties = lookup[original.key];
+    const app: AppProperties = lookup[original.key as App];
 
     expect(Object.keys(lookup).length).toBe(AppList.length);
     expect(app.key).toBe(original.key);
@@ -35,7 +35,7 @@ describe('ServiceApp', () => {
     AppList[1].iconExtension = 'jpg';
 
     const secondKey: string = AppList[1].key;
-    const apps: Array<AppProperties> = ServiceApp.toArray(
+    const apps: Array<AppProperties> = AppService.toArray(
       spectator.service.generateLookup(AppList)
     );
     const app: AppProperties = apps[1];

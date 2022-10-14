@@ -1,6 +1,6 @@
 import { trigger, AnimationTriggerMetadata, useAnimation, transition, state } from '@angular/animations';
 
-import { Animation } from '@fantasia/app/enums';
+import { Animation } from '../../enums';
 
 import { AnimationHoverProperties } from './hover.animation.properties';
 import { AnimationHoverOffStyle } from './hover-off.animation.style';

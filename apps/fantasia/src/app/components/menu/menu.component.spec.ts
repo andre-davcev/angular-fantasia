@@ -21,26 +21,26 @@ import {
   ActionAppLoad,
   StateAppOptions,
   App,
-  ComponentMenu,
-  ModuleComponentMenu,
+  MenuComponent,
+  MenuComponentModule,
   MaterialBreakpoint,
   ActionAppNavToHome,
   ActionAppNavToChild,
   StateAppModel
 } from '@fantasia/app';
 
-describe('ComponentMenu', () => {
+describe('MenuComponent', () => {
   let store: SpectatorService<Store>;
   const createStore: SpectatorServiceFactory<Store> = createServiceFactory<
     Store
   >(Store);
 
-  let spectator: Spectator<ComponentMenu>;
+  let spectator: Spectator<MenuComponent>;
 
-  const createComponent = createComponentFactory<ComponentMenu>({
-    component: ComponentMenu,
+  const createComponent = createComponentFactory<MenuComponent>({
+    component: MenuComponent,
     imports: [
-      ModuleComponentMenu,
+      MenuComponentModule,
       RouterTestingModule,
       NgxsModule.forRoot([StateApp]),
       TranslateModule.forRoot(),

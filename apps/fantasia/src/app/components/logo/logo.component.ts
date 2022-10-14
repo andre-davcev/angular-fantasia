@@ -1,7 +1,10 @@
 import { Component, ChangeDetectionStrategy, HostListener } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { Animation } from '@fantasia/app/enums';
-import { AnimationHover } from '@fantasia/app/animations';
+import { Animation } from '../../enums';
+import { AnimationHover } from '../../animations';
 
 @Component({
   selector: 'app-logo',
@@ -10,7 +13,7 @@ import { AnimationHover } from '@fantasia/app/animations';
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [ AnimationHover ]
 })
-export class ComponentLogo {
+export class LogoComponent {
   public animation: string = Animation.Default;
 
   @HostListener('mouseover')
@@ -23,3 +26,13 @@ export class ComponentLogo {
     this.animation = Animation.Default;
   }
 }
+
+@NgModule({
+  declarations: [LogoComponent],
+  imports: [
+    CommonModule,
+    FlexLayoutModule
+  ],
+  exports: [LogoComponent]
+})
+export class LogoComponentModule { }

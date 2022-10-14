@@ -4,16 +4,16 @@ import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { NgxsModule } from '@ngxs/store';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { StateApp, ModuleComponentMain, ComponentMain } from '@fantasia/app';
+import { StateApp, MainComponentModule, MainComponent } from '@fantasia/app';
 
-describe('ComponentMain', () => {
-  let spectator: Spectator<ComponentMain>;
+describe('MainComponent', () => {
+  let spectator: Spectator<MainComponent>;
 
   const createComponent = createComponentFactory({
-    component: ComponentMain,
+    component: MainComponent,
     imports: [
       RouterTestingModule,
-      ModuleComponentMain,
+      MainComponentModule,
       NgxsModule.forRoot([StateApp]),
       TranslateModule.forRoot(),
       NoopAnimationsModule

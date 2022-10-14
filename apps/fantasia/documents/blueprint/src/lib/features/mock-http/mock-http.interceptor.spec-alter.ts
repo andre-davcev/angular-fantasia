@@ -5,7 +5,6 @@ import {
 } from '@angular/common/http/testing';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpMockRequestInterceptor } from './mock-http.interceptor';
-import { MOCK_HTTP_ROUTES } from './mock-http-routes.const';
 
 describe('HttpMockRequestInterceptor', () => {
   let http: HttpClient;

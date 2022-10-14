@@ -1,24 +1,19 @@
 import { Routes } from '@angular/router';
 
-import { App } from '@fantasia/app/enums';
-import {
-  ModuleComponentMain,
-  ModulePageResume,
-  ModulePageStarcraft
-} from '@fantasia/app';
+import { App } from './enums';
 
-export const RoutesApp: Routes = [
+export const AppRoutes: Routes = [
   // { path: '**', component: ErrorComponent }
   {
     path: App.Root,
-    loadChildren: () => ModuleComponentMain
+    loadChildren: () => import('@fantasia/app').then((m) => m.MainComponentModule),
   },
   {
     path: App.Resume,
-    loadChildren: () => ModulePageResume
+    loadChildren: () => import('@fantasia/app').then((m) => m.ResumePageComponentModule)
   },
   {
     path: App.Starcraft,
-    loadChildren: () => ModulePageStarcraft
+    loadChildren: () => import('@fantasia/app').then((m) => m.StarcraftPageComponentModule)
   }
 ];

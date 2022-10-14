@@ -2,15 +2,15 @@ import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { createComponentFactory, Spectator } from '@ngneat/spectator';
 
-import { AppModule } from './app.module';
-import { ComponentApp } from './app.component';
+import { AppComponentModule } from './app.module';
+import { AppComponent } from './app.component';
 
-describe('ComponentApp', () => {
-  let spectator: Spectator<ComponentApp>;
+describe('AppComponent', () => {
+  let spectator: Spectator<AppComponent>;
 
   const createComponent = createComponentFactory({
-    component: ComponentApp,
-    imports: [RouterTestingModule, AppModule],
+    component: AppComponent,
+    imports: [RouterTestingModule, AppComponentModule],
     providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
     declareComponent: false
   });

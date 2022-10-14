@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+
 import { AppProperties } from '../../models';
 import { App } from '../../enums';
 
 @Injectable({ providedIn: 'root'})
-export class ServiceApp {
+export class AppService {
 
   public static toArray(lookup: Record<App, AppProperties>): Array<AppProperties> {
     return Object.
       keys(lookup).
-      map(id => lookup[id]).
-      sort((a: AppProperties, b: AppProperties) => a.order - b.order);
+      map(id => lookup[id as App]).
+      sort((a: AppProperties, b: AppProperties) => (a.order || 0) - (b.order || 0));
   }
 
   public generateLookup(apps: Array<AppProperties>): Record<App, AppProperties> {

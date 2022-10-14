@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { ComponentMain } from './main.component';
-import { App } from '@fantasia/app/enums';
+import { App } from '../../enums';
+import { MainComponent } from './main.component';
 
-export const ComponentMainRoutes: Routes = [
+export const MainComponentRoutes: Routes = [
   { path: App.Root, redirectTo: App.Home, pathMatch: 'full' },
-  { path: App.Home, component: ComponentMain }
+  { path: App.Home, component: MainComponent }
 ];

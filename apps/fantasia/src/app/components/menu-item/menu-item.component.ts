@@ -1,10 +1,13 @@
 import { Component, Input, HostListener } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '@ngxs/store';
 
-import { AppProperties } from '@fantasia/app/models';
-import { ActionAppNavToChild } from '@fantasia/app/state';
-import { AnimationHover } from '@fantasia/app/animations';
-import { Animation } from '@fantasia/app/enums';
+import { AppProperties } from '../../models';
+import { ActionAppNavToChild } from '../../state';
+import { AnimationHover } from '../../animations';
+import { Animation } from '../../enums';
 
 @Component({
   selector: 'app-menu-item',
@@ -12,7 +15,7 @@ import { Animation } from '@fantasia/app/enums';
   styleUrls: ['./menu-item.component.scss'],
   animations: [ AnimationHover ]
 })
-export class ComponentMenuItem {
+export class MenuItemComponent {
   public animation: string = Animation.Default;
 
   constructor(private store: Store) {}
@@ -34,3 +37,10 @@ export class ComponentMenuItem {
     this.animation = Animation.Default;
   }
 }
+
+@NgModule({
+  imports: [CommonModule, TranslateModule],
+  declarations: [MenuItemComponent],
+  exports: [MenuItemComponent]
+})
+export class MenuItemComponentModule {}

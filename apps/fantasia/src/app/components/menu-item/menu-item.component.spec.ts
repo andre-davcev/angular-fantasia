@@ -13,35 +13,35 @@ import {
 } from '@ngneat/spectator';
 
 import {
-  ServiceApp,
+  AppService,
   AppList,
   StateApp,
   ActionAppLoad,
   StateAppOptions,
   ActionAppNavToChild,
   AppProperties,
-  ComponentMenuItem,
-  ModuleMenuItem
+  MenuItemComponent,
+  MenuItemComponentModule
 } from '@fantasia/app';
 
-describe('ComponentMenuItem', () => {
+describe('MenuItemComponent', () => {
   let store: SpectatorService<Store>;
   const createStore: SpectatorServiceFactory<Store> = createServiceFactory<
     Store
   >(Store);
 
-  let app: SpectatorService<ServiceApp>;
-  const createApp: SpectatorServiceFactory<ServiceApp> = createServiceFactory<
-    ServiceApp
-  >(ServiceApp);
+  let app: SpectatorService<AppService>;
+  const createApp: SpectatorServiceFactory<AppService> = createServiceFactory<
+    AppService
+  >(AppService);
 
-  let spectator: Spectator<ComponentMenuItem>;
+  let spectator: Spectator<MenuItemComponent>;
   let element: HTMLElement;
 
-  const createComponent = createComponentFactory<ComponentMenuItem>({
-    component: ComponentMenuItem,
+  const createComponent = createComponentFactory<MenuItemComponent>({
+    component: MenuItemComponent,
     imports: [
-      ModuleMenuItem,
+      MenuItemComponentModule,
       RouterTestingModule,
       NgxsModule.forRoot([StateApp]),
       TranslateModule.forRoot(),
@@ -58,7 +58,7 @@ describe('ComponentMenuItem', () => {
     store.service.dispatch(new ActionAppLoad(AppList));
 
     spectator = createComponent();
-    spectator.component.app = ServiceApp.toArray(
+    spectator.component.app = AppService.toArray(
       app.service.generateLookup(AppList)
     )[0];
     spectator.fixture.detectChanges();
@@ -83,7 +83,7 @@ describe('ComponentMenuItem', () => {
     ).nativeElement;
 
     expect(avatar.alt).toBe(properties.display);
-    expect(avatar.src.includes(properties.icon)).toBe(true);
+    expect(avatar.src.includes(properties.icon || 'EMPTY')).toBe(true);
     expect(header.textContent).toBe(properties.display);
     expect(description.textContent).toBe(properties.description);
   });
