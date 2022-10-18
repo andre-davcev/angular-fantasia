@@ -30,6 +30,7 @@
     "pnp.polacode",
     "wayou.vscode-todo-highlight",
     "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "firsttris.vscode-jest-runner"
   ]
 }

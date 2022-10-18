@@ -16,7 +16,7 @@ import {
 } from './app.actions';
 import { StateAppModel } from './app.state.model';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
-import { App, MaterialBreakpoint, AppRoutes } from '@fantasia/app';
+import { App, MaterialBreakpoint } from '@fantasia/app';
 import { MediaObserver } from '@angular/flex-layout';
 import { of } from 'rxjs';
 import { SpectatorService } from '@ngneat/spectator';
@@ -24,6 +24,7 @@ import {
   createServiceFactory,
   SpectatorServiceFactory,
 } from '@ngneat/spectator';
+import { AppRoutes } from '@fantasia/app/app.routes';
 describe('StateApp', () => {
   let store: SpectatorService<Store>;
   const createStore: SpectatorServiceFactory<Store> =

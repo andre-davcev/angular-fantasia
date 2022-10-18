@@ -31,7 +31,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         MenuComponentModule,
         RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' }),
         NgxsRouterPluginModule.forRoot(),
-        NgxsModule.forRoot([StateApp]),
+        NgxsModule.forRoot([StateApp], { selectorOptions: {
+          suppressErrors: false,
+          injectContainerState: true
+        }}),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         TranslateModule.forRoot({
             loader: {
