@@ -15,14 +15,14 @@ module.exports = {
     '!src/**/environments/**', // Environments
     '!src/**/main.ts', // Main
     '!src/**/polyfills.ts', // Polyfills
-    '!src/**/*.mock.ts' // Mocks
+    '!src/**/*.mock.ts', // Mocks
   ],
   coverageThreshold: {
     global: {
       branches: 90,
       functions: 90,
       lines: 90,
-      statements: 90
-    }
-  }
+      statements: 90,
+    },
+  },
 };
