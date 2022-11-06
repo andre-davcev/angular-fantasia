@@ -1,6 +1,6 @@
 {
   "app.firefly.title": "Firefly",
-  "app.firefly.description": "Location aware mobile app created by myself and David Beaton",
+  "app.firefly.description": "An app helping you discover events in your local area",
 
   "app.resume.title": "Resume",
   "app.resume.description": "A downloadable resume and list of skill proficiencies",
@@ -13,6 +13,12 @@
 
   "app.photos.title": "Photos",
   "app.photos.description": "A selection of my favorite photos of family and friends",
+
+  "app.memories.title": "Memories",
+  "app.memories.description": "A selection of my favorite photos of family and friends",
+
+  "app.art.title": "Art",
+  "app.art.description": "My personal journey with drawing and art",
 
   "app.starcraft.title": "Starcraft",
   "app.starcraft.description": "Charting my progress on the Starcraft 2 ladder",

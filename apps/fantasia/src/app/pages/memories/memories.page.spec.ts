@@ -1,15 +1,18 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
-import { ResumePageComponentModule, ResumePageComponent } from '@fantasia/app';
+import {
+  MemoriesPageComponentModule,
+  MemoriesPageComponent,
+} from '@fantasia/app';
 
-describe('ResumePageComponent', () => {
-  let spectator: Spectator<ResumePageComponent>;
+describe('MemoriesPageComponent', () => {
+  let spectator: Spectator<MemoriesPageComponent>;
 
   const createComponent = createComponentFactory({
-    component: ResumePageComponent,
-    imports: [RouterTestingModule, ResumePageComponentModule],
-    declareComponent: false
+    component: MemoriesPageComponent,
+    imports: [RouterTestingModule, MemoriesPageComponentModule],
+    declareComponent: false,
   });
 
   beforeEach(() => (spectator = createComponent()));

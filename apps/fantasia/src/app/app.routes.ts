@@ -6,14 +6,17 @@ export const AppRoutes: Routes = [
   // { path: '**', component: ErrorComponent }
   {
     path: App.Root,
-    loadChildren: () => import('@fantasia/app').then((m) => m.MainComponentModule),
+    loadChildren: () =>
+      import('@fantasia/app').then((m) => m.MainComponentModule),
   },
   {
-    path: App.Resume,
-    loadChildren: () => import('@fantasia/app').then((m) => m.ResumePageComponentModule)
+    path: App.Memories,
+    loadChildren: () =>
+      import('@fantasia/app').then((m) => m.MemoriesPageComponentModule),
   },
   {
-    path: App.Starcraft,
-    loadChildren: () => import('@fantasia/app').then((m) => m.StarcraftPageComponentModule)
-  }
+    path: App.Art,
+    loadChildren: () =>
+      import('@fantasia/app').then((m) => m.ArtPageComponentModule),
+  },
 ];

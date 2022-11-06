@@ -1,15 +1,15 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
-import { StarcraftPageComponentModule, StarcraftPageComponent } from '@fantasia/app';
+import { ArtPageComponentModule, ArtPageComponent } from '@fantasia/app';
 
-describe('PageStarcraft', () => {
-  let spectator: Spectator<StarcraftPageComponent>;
+describe('ArtPageComponent', () => {
+  let spectator: Spectator<ArtPageComponent>;
 
   const createComponent = createComponentFactory({
-    component: StarcraftPageComponent,
-    imports: [RouterTestingModule, StarcraftPageComponentModule],
-    declareComponent: false
+    component: ArtPageComponent,
+    imports: [RouterTestingModule, ArtPageComponentModule],
+    declareComponent: false,
   });
 
   beforeEach(() => (spectator = createComponent()));

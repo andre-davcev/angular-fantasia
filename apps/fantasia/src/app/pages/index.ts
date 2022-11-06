@@ -1,2 +1,2 @@
-export * from './resume';
-export * from './starcraft';
+export * from './memories';
+export * from './art';

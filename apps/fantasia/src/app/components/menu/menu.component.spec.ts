@@ -12,7 +12,7 @@ import {
   Spectator,
   SpectatorService,
   SpectatorServiceFactory,
-  createServiceFactory
+  createServiceFactory,
 } from '@ngneat/spectator';
 
 import {
@@ -26,14 +26,13 @@ import {
   MaterialBreakpoint,
   ActionAppNavToHome,
   ActionAppNavToChild,
-  StateAppModel
+  StateAppModel,
 } from '@fantasia/app';
 
 describe('MenuComponent', () => {
   let store: SpectatorService<Store>;
-  const createStore: SpectatorServiceFactory<Store> = createServiceFactory<
-    Store
-  >(Store);
+  const createStore: SpectatorServiceFactory<Store> =
+    createServiceFactory<Store>(Store);
 
   let spectator: Spectator<MenuComponent>;
 
@@ -44,9 +43,9 @@ describe('MenuComponent', () => {
       RouterTestingModule,
       NgxsModule.forRoot([StateApp]),
       TranslateModule.forRoot(),
-      NoopAnimationsModule
+      NoopAnimationsModule,
     ],
-    declareComponent: false
+    declareComponent: false,
   });
 
   beforeEach(() => {
@@ -65,7 +64,7 @@ describe('MenuComponent', () => {
     store.service.dispatch(new ActionAppNavToHome());
     const breakpoint: MaterialBreakpoint = MaterialBreakpoint.Large;
     Object.defineProperty(spectator.component, 'breakpoint$', {
-      value: of(breakpoint)
+      value: of(breakpoint),
     });
 
     spectator.component.ngOnInit();
@@ -96,10 +95,10 @@ describe('MenuComponent', () => {
   }));
 
   it('should have 1 column', waitForAsync(() => {
-    store.service.dispatch(new ActionAppNavToChild(App.Resume));
+    store.service.dispatch(new ActionAppNavToChild(App.Memories));
     const breakpoint: MaterialBreakpoint = MaterialBreakpoint.Large;
     Object.defineProperty(spectator.component, 'breakpoint$', {
-      value: of(breakpoint)
+      value: of(breakpoint),
     });
     spectator.component.ngOnInit();
 
@@ -115,7 +114,7 @@ describe('MenuComponent', () => {
   }));
 
   it('should navigate home', waitForAsync(() => {
-    store.service.dispatch(new ActionAppNavToChild(App.Resume));
+    store.service.dispatch(new ActionAppNavToChild(App.Memories));
     spectator.fixture.detectChanges();
 
     spectator.component.home();
