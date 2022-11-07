@@ -6,11 +6,11 @@
   [fxLayoutAlign]="alignGrid$ | async"
   *ngIf="breakpoint$ | async"
 >
-  <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="2rem">
+  <section fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="2rem">
     <mat-grid-list
       [ngClass]="gridClass$ | async"
       [cols]="columns$ | async"
-      [rowHeight]="(columns$ | async) === 1 ? '55px' : '181px'"
+      [rowHeight]="(columns$ | async) === 1 ? '68px' : '181px'"
       gutterSize="1rem"
     >
       <mat-grid-tile *ngFor="let app of apps$ | async">

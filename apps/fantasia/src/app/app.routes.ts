@@ -7,16 +7,15 @@ export const AppRoutes: Routes = [
   {
     path: App.Root,
     loadChildren: () =>
-      import('@fantasia/app').then((m) => m.MainComponentModule),
+      import('./components').then((m) => m.MainComponentModule),
   },
   {
     path: App.Memories,
     loadChildren: () =>
-      import('@fantasia/app').then((m) => m.MemoriesPageComponentModule),
+      import('./pages').then((m) => m.MemoriesPageComponentModule),
   },
   {
     path: App.Art,
-    loadChildren: () =>
-      import('@fantasia/app').then((m) => m.ArtPageComponentModule),
+    loadChildren: () => import('./pages').then((m) => m.ArtPageComponentModule),
   },
 ];

@@ -1,3 +1,5 @@
+@use 'app-mixins' as mixins;
+
 :host {
   display: flex;
   position: relative;
@@ -15,8 +17,12 @@
     height: 100%;
     padding: 2rem;
 
+    @include mixins.animation;
+    transition-property: margin, padding;
+
     &.cpt-columns-1 {
-      padding-left: 28px;
+      margin-top: 70px;
+      padding-left: 15px;
 
       mat-grid-list {
         width: 102px;
@@ -57,9 +63,8 @@
     mat-grid-tile {
       overflow: visible;
 
-      transition-duration: 500ms;
+      @include mixins.animation;
       transition-property: left, top;
-      transition-timing-function: ease-out;
     }
   }
 }

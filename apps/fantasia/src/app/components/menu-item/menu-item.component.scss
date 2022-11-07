@@ -31,6 +31,7 @@
     border-radius: 0.25rem;
     text-align: center;
     opacity: 0.9;
+
     .cpt-avatar {
       overflow: hidden;
       line-height: 1;
@@ -69,7 +70,8 @@
 
     .cpt-link {
       width: 76px;
-      padding-top: 1.25rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
     }
   }
 }
