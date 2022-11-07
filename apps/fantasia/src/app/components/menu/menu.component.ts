@@ -12,12 +12,12 @@ import { MenuItemComponentModule } from '../menu-item';
 import { LogoComponentModule } from '../logo';
 import { AppProperties } from '../../models';
 import { StateApp, ActionAppNavToHome } from '../../state';
-import { MaterialBreakpoint } from '../../enums';
+import { IconSize, MaterialBreakpoint } from '../../enums';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
   @Select(StateApp.apps) apps$: Observable<Array<AppProperties>>;
@@ -29,11 +29,13 @@ export class MenuComponent implements OnInit {
     [MaterialBreakpoint.Small]: 2,
     [MaterialBreakpoint.Medium]: 2,
     [MaterialBreakpoint.Large]: 2,
-    [MaterialBreakpoint.ExtraLarge]: 2
+    [MaterialBreakpoint.ExtraLarge]: 2,
   };
 
   public columns$: Observable<number>;
   public gridClass$: Observable<string>;
+  public alignGrid$: Observable<string>;
+  public iconSize$: Observable<IconSize>;
 
   constructor(private store: Store) {}
 
@@ -46,6 +48,14 @@ export class MenuComponent implements OnInit {
 
     this.gridClass$ = this.breakpoint$.pipe(
       map((breakpoint: MaterialBreakpoint) => `cpt-${breakpoint}`)
+    );
+
+    this.alignGrid$ = this.columns$.pipe(
+      map((count: number) => (count === 1 ? 'start start' : 'center center'))
+    );
+
+    this.iconSize$ = this.columns$.pipe(
+      map((count: number) => (count === 1 ? IconSize.Small : IconSize.Large))
     );
   }
 
@@ -61,10 +71,10 @@ export class MenuComponent implements OnInit {
     FlexLayoutModule,
     MatGridListModule,
     MenuItemComponentModule,
-    LogoComponentModule
+    LogoComponentModule,
   ],
 
   declarations: [MenuComponent],
-  exports: [MenuComponent]
+  exports: [MenuComponent],
 })
-export class MenuComponentModule { }
+export class MenuComponentModule {}

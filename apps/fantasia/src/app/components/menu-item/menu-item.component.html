@@ -2,10 +2,14 @@
   <img
     class="cpt-avatar"
     alt="{{ app.display || '' | translate }}"
-    height="64"
-    width="64"
+    [height]="size === IconSize.Large ? 64 : 48"
+    [width]="size === IconSize.Large ? 64 : 48"
     [src]="app.icon"
   />
-  <h3 class="cpt-header">{{ app.display || '' | translate }}</h3>
-  <p class="cpt-description">{{ app.description || '' | translate }}</p>
+  <h3 *ngIf="size === IconSize.Large" class="cpt-header">
+    {{ app.display || '' | translate }}
+  </h3>
+  <p *ngIf="size === IconSize.Large" class="cpt-description">
+    {{ app.description || '' | translate }}
+  </p>
 </a>

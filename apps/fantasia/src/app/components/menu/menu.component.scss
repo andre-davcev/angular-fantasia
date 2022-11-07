@@ -15,6 +15,20 @@
     height: 100%;
     padding: 2rem;
 
+    &.cpt-columns-1 {
+      padding-left: 28px;
+
+      mat-grid-list {
+        width: 102px;
+      }
+    }
+
+    &.cpt-columns-2 {
+      mat-grid-list {
+        width: 484px;
+      }
+    }
+    /*
     mat-grid-list {
       width: 986px;
 
@@ -39,7 +53,7 @@
         width: 234px;
       }
     }
-
+*/
     mat-grid-tile {
       overflow: visible;
 
