@@ -9,7 +9,7 @@ import {
   createComponentFactory,
   SpectatorService,
   SpectatorServiceFactory,
-  createServiceFactory
+  createServiceFactory,
 } from '@ngneat/spectator';
 
 import {
@@ -21,19 +21,17 @@ import {
   ActionAppNavToChild,
   AppProperties,
   MenuItemComponent,
-  MenuItemComponentModule
+  MenuItemComponentModule,
 } from '@fantasia/app';
 
 describe('MenuItemComponent', () => {
   let store: SpectatorService<Store>;
-  const createStore: SpectatorServiceFactory<Store> = createServiceFactory<
-    Store
-  >(Store);
+  const createStore: SpectatorServiceFactory<Store> =
+    createServiceFactory<Store>(Store);
 
   let app: SpectatorService<AppService>;
-  const createApp: SpectatorServiceFactory<AppService> = createServiceFactory<
-    AppService
-  >(AppService);
+  const createApp: SpectatorServiceFactory<AppService> =
+    createServiceFactory<AppService>(AppService);
 
   let spectator: Spectator<MenuItemComponent>;
   let element: HTMLElement;
@@ -45,9 +43,9 @@ describe('MenuItemComponent', () => {
       RouterTestingModule,
       NgxsModule.forRoot([StateApp]),
       TranslateModule.forRoot(),
-      NoopAnimationsModule
+      NoopAnimationsModule,
     ],
-    declareComponent: false
+    declareComponent: false,
   });
 
   beforeEach(waitForAsync(() => {
@@ -84,8 +82,8 @@ describe('MenuItemComponent', () => {
 
     expect(avatar.alt).toBe(properties.display);
     expect(avatar.src.includes(properties.icon || 'EMPTY')).toBe(true);
-    expect(header.textContent).toBe(properties.display);
-    expect(description.textContent).toBe(properties.description);
+    expect(header.textContent?.trim()).toBe(properties.display);
+    expect(description.textContent?.trim()).toBe(properties.description);
   });
 
   it('should call mouse over', () => {
@@ -93,7 +91,7 @@ describe('MenuItemComponent', () => {
       new MouseEvent('mouseover', {
         view: window,
         bubbles: true,
-        cancelable: true
+        cancelable: true,
       })
     );
 
@@ -105,14 +103,14 @@ describe('MenuItemComponent', () => {
       new MouseEvent('mouseover', {
         view: window,
         bubbles: true,
-        cancelable: true
+        cancelable: true,
       })
     );
     element.dispatchEvent(
       new MouseEvent('mouseleave', {
         view: window,
         bubbles: true,
-        cancelable: true
+        cancelable: true,
       })
     );
 
