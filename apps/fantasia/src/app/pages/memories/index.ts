@@ -1,1 +1,1 @@
-export * from './resume.page';
+export * from './memories.page';
