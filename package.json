@@ -51,7 +51,7 @@
     "@ngxs/devtools-plugin": "^3.6.2",
     "@ngxs/router-plugin": "^3.6.2",
     "@ngxs/store": "^3.6.2",
-    "@nrwl/angular": "14.8.4",
+    "@nrwl/angular": "15.0.13",
     "core-js": "^2.5.4",
     "fs-extra": "^10.1.0",
     "git-describe": "^4.0.4",
