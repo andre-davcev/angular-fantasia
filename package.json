@@ -51,7 +51,7 @@
     "@ngxs/devtools-plugin": "^3.6.2",
     "@ngxs/router-plugin": "^3.6.2",
     "@ngxs/store": "^3.6.2",
-    "@nrwl/angular": "14.8.4",
+    "@nrwl/angular": "15.2.0",
     "core-js": "^2.5.4",
     "fs-extra": "^10.1.0",
     "git-describe": "^4.0.4",
@@ -63,7 +63,7 @@
     "zone.js": "0.11.8"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "14.2.6",
+    "@angular-devkit/build-angular": "14.2.10",
     "@angular-devkit/core": "14.2.6",
     "@angular-devkit/schematics": "14.2.6",
     "@angular-eslint/eslint-plugin": "~14.0.4",
