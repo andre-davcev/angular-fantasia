@@ -1,4 +1,4 @@
-@import 'app-variables';
+@use 'app-mixins' as mixins;
 
 :host {
   --cpt-logo-color: rgba(0, 0, 0, 0.92);
@@ -7,6 +7,8 @@
   --cpt-logo-width: 76px;
   --cpt-logo-height: 55px;
   --cpt-logo-border-radius: 5px;
+
+  @include mixins.hover;
 
   .cpt-container {
     cursor: pointer;

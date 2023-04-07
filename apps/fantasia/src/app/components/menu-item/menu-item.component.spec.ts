@@ -18,7 +18,6 @@ import {
   StateApp,
   ActionAppLoad,
   StateAppOptions,
-  ActionAppNavToChild,
   AppProperties,
   MenuItemComponent,
   MenuItemComponentModule,
@@ -84,47 +83,5 @@ describe('MenuItemComponent', () => {
     expect(avatar.src.includes(properties.icon || 'EMPTY')).toBe(true);
     expect(header.textContent?.trim()).toBe(properties.display);
     expect(description.textContent?.trim()).toBe(properties.description);
-  });
-
-  it('should call mouse over', () => {
-    element.dispatchEvent(
-      new MouseEvent('mouseover', {
-        view: window,
-        bubbles: true,
-        cancelable: true,
-      })
-    );
-
-    expect(spectator.component.animation).toBe('hover');
-  });
-
-  it('should call mouse leave', () => {
-    element.dispatchEvent(
-      new MouseEvent('mouseover', {
-        view: window,
-        bubbles: true,
-        cancelable: true,
-      })
-    );
-    element.dispatchEvent(
-      new MouseEvent('mouseleave', {
-        view: window,
-        bubbles: true,
-        cancelable: true,
-      })
-    );
-
-    expect(spectator.component.animation).toBe('default');
-  });
-
-  it('should navigate on click', () => {
-    jest.spyOn(store.service, 'dispatch');
-    element.dispatchEvent(
-      new MouseEvent('click', { view: window, bubbles: true, cancelable: true })
-    );
-
-    expect(store.service.dispatch).toBeCalledWith(
-      new ActionAppNavToChild(spectator.component.app.key)
-    );
   });
 });

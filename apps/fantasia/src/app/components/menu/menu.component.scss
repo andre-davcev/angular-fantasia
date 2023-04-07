@@ -17,9 +17,6 @@
     height: 100%;
     padding: 2rem;
 
-    @include mixins.animation;
-    transition-property: margin, padding;
-
     &.cpt-columns-1 {
       margin-top: 70px;
       padding-left: 15px;
@@ -63,8 +60,7 @@
     mat-grid-tile {
       overflow: visible;
 
-      @include mixins.animation;
-      transition-property: left, top;
+      @include mixins.hover;
     }
   }
 }
