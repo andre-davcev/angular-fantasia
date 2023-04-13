@@ -111,7 +111,7 @@ describe('StateApp', () => {
 
     store.service.dispatch([
       new ActionAppLoad(AppList),
-      new ActionAppNavToChild(App.Memories),
+      new ActionAppNavToChild(App.Art),
     ]);
 
     store.service
@@ -119,7 +119,7 @@ describe('StateApp', () => {
       .subscribe((state: StateAppModel) => {
         expect(StateApp.home(state)).toBe(false);
         expect(StateApp.loading(state)).toBe(true);
-        expect(router.navigate).toBeCalledWith([App.Memories], {
+        expect(router.navigate).toBeCalledWith([App.Art], {
           queryParams: undefined,
         });
       });
