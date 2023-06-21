@@ -46,14 +46,14 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "node_modules",
-                "libs/sass",
+                "styles",
                 "apps/fantasia/src/styles"
               ]
             },
             "assets": ["apps/fantasia/src/assets"],
             "styles": [
               "node_modules/normalize.css/normalize.css",
-              "libs/sass/blueprint-reset.scss",
+              "styles/blueprint/reset.scss",
               "apps/fantasia/src/styles.scss"
             ],
             "scripts": [],
@@ -115,13 +115,13 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "node_modules",
-                "libs/sass",
+                "styles",
                 "apps/fantasia/src/styles"
               ]
             },
             "styles": [
               "node_modules/normalize.css/normalize.css",
-              "libs/sass/blueprint-reset.scss",
+              "styles/blueprint/reset.scss",
               "apps/fantasia/src/styles.scss"
             ],
             "assets": [
