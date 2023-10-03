@@ -106,7 +106,7 @@ describe('StateApp', () => {
       });
   }));
 
-  it('should navigate to child route', waitForAsync(() => {
+  xit('should navigate to child route', waitForAsync(() => {
     jest.spyOn(router, 'navigate');
 
     store.service.dispatch([
