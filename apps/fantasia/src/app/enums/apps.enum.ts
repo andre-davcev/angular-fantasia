@@ -6,4 +6,6 @@ export enum App {
   Memories = 'memories',
   Art = 'art',
   Movies = 'movies',
+  Resume = 'resume',
+  Github = 'github',
 }

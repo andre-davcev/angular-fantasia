@@ -1,9 +1,12 @@
 {
   "app.firefly.title": "Firefly",
-  "app.firefly.description": "An app helping you discover events in your local area",
+  "app.firefly.description": "Events mobile app built with Ionic, Angular, Firebase, & NGXS",
 
   "app.resume.title": "Resume",
   "app.resume.description": "A downloadable resume and list of skill proficiencies",
+
+  "app.github.title": "Github",
+  "app.github.description": "A link to my github profile and repositories",
 
   "app.soundtrack-mixes.title": "Soundtrack Mixes",
   "app.soundtrack-mixes.description": "Select your mood and experience a soundtrack to match",
