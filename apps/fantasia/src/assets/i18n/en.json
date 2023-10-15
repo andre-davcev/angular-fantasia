@@ -36,5 +36,8 @@
   "app.movies.description": "My favorite movies of all time split up by genre",
 
   "app.blog.title": "Blog",
-  "app.blog.description": "A blog about life, politics, religion and other random things"
+  "app.blog.description": "A blog about life, politics, religion and other random things",
+
+  "app.linkedin.title": "LinkedIn",
+  "app.linkedin.description": "My professional profile on LinkedIn"
 }
