@@ -1,10 +1,10 @@
 # Fantasia
 
-This is my personal sandbox project which you can find at [andredavcev.com](https://andredavcev.com/). Fantasia comes from one of my favorite movies as a kid [The Neverending Story](<https://en.wikipedia.org/wiki/The_NeverEnding_Story_(film)>). Right now the site is a skeleton for all of my interests. Over the years this project should evolve and become my creative outlet. Since my life is pretty busy, don't expect regular updates.
+This is my personal sandbox project which you can find at [andredavcev.com](https://andredavcev.com/). Fantasia comes from one of my favorite movies as a kid [The Neverending Story](<https://en.wikipedia.org/wiki/The_NeverEnding_Story_(film)>). Over the years this project should evolve and become my creative outlet.
 
 ## Technology Stack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx). Every push to the master branch triggers continuous integration using [Circle CI](https://circleci.com/). This Angular application is currently on version 9+ and utilizes various TypeScript libraries. [RxJS](https://rxjs-dev.firebaseapp.com/) is used extensively throughout the code and am using [NGXS](https://ngxs.gitbook.io/ngxs) for state management.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx). Every push to the master branch triggers continuous integration using [Circle CI](https://circleci.com/). This Angular application is currently on version 14 and utilizes various TypeScript libraries. [RxJS](https://rxjs-dev.firebaseapp.com/) is used extensively throughout the code and am using [NGXS](https://ngxs.gitbook.io/ngxs) for state management.
 
 ## Quick Start & Documentation
 

@@ -8,4 +8,5 @@ export enum App {
   Movies = 'movies',
   Resume = 'resume',
   Github = 'github',
+  LinkedIn = 'linkedin',
 }

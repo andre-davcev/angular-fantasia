@@ -7,6 +7,10 @@ export const AppList: Array<AppProperties> = [
     link: '/assets/docs/Andre Davcev - Senior Software Engineer - Resume.docx',
   },
   { key: App.Github, link: 'https://github.com/andre-davcev' },
+  {
+    key: App.LinkedIn,
+    link: 'http://www.linkedin.com/in/andre-davcev-566912b',
+  },
   { key: App.Firefly, link: 'https://firefly.im' },
   // {
   //   key: App.Alexandria,
