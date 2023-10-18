@@ -1,0 +1,16 @@
+{
+  "name": "fantasia-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/fantasia-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@angular-devkit/build-angular:protractor",
+      "options": {
+        "protractorConfig": "apps/fantasia-e2e/protractor.conf.js",
+        "devServerTarget": "fantasia:serve"
+      }
+    }
+  },
+  "prefix": "app"
+}
