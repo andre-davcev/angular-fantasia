@@ -1,6 +1,6 @@
 # Fantasia
 
-This is my personal sandbox project which you can find at [andredavcev.com](https://andredavcev.com/). Fantasia comes from one of my favorite movies as a kid [The Neverending Story](<https://en.wikipedia.org/wiki/The_NeverEnding_Story_(film)>). Over the years this project should evolve and become my creative outlet.
+This is my personal website which you can find at [andredavcev.com](https://andredavcev.com/). Fantasia comes from one of my favorite movies as a kid [The Neverending Story](<https://en.wikipedia.org/wiki/The_NeverEnding_Story_(film)>). Over the years this project should evolve and become my creative outlet.
 
 ## Technology Stack
 
@@ -12,6 +12,6 @@ Although this is a personal project, you should be able to replicate my environm
 
 ## Running Fantasia locally
 
-Run `npm run fan-serve`. Then navigate to (localhost:4201)[http://localhost:4201/]. Enjoy!
+Run `npm run fan-serve`. Then navigate to [localhost:4201](http://localhost:4201/). Enjoy!
 
 ## Thanks for checking out my code!
