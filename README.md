@@ -14,4 +14,26 @@ Although this is a personal project, you should be able to replicate my environm
 
 Run `npm run fan-serve`. Then navigate to (localhost:4201)[http://localhost:4201/]. Enjoy!
 
+## To Do List
+
+- [ ] Update to Nx `v15`
+- [ ] Update to Nx `v16`
+- [ ] Update to Nx `v17`
+- [ ] Migrate fantasia to be [module federation host](https://nx.dev/recipes/module-federation/create-a-host)
+- [ ] Migrate torcoin to be [module federation remote](https://nx.dev/recipes/module-federation/create-a-remote)
+- [ ] Add [storybook](https://nx.dev/recipes/storybook/overview-angular) to fantasia
+- [ ] `npx nx g @nrwl/workspace:convert-to-nx-project --all`
+- [ ] Nx workspace v2
+- [ ] Copy over `theory-apps` code format config
+- [ ] `npx nx format:write --all`
+- [ ] Upgrade [torqoin](https://github.com/andre-davcev/torqoin) to `npx nx migrate 14.8.4`
+- [ ] Move business logic to fantasia lib
+- [ ] Fix menu missing on child pages
+- [ ] Implement [Response Glass Sidebar](https://youtu.be/hAnv1NEE7j8)
+- [ ] Replace @angular/flex-layout with tailwind
+- [ ] `npx nx migrate latest`
+- [ ] Design new icons
+- [ ] Implement [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation) As Background On `/art`
+- [ ] Add soundtrack playlist
+
 ## Thanks for checking out my code!
