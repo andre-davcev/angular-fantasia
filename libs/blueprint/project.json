@@ -1,0 +1,30 @@
+{
+  "name": "blueprint",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/blueprint/src",
+  "projectType": "library",
+  "prefix": "blu",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "options": {
+        "tsConfig": "libs/blueprint/tsconfig.lib.json",
+        "project": "libs/blueprint/ng-package.json",
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "libs/blueprint/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "generators": {
+    "@nrwl/schematics:component": {
+      "styleext": "scss"
+    }
+  }
+}

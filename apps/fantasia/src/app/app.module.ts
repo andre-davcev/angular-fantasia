@@ -23,29 +23,31 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FlexLayoutModule,
-        HttpClientModule,
-        MenuComponentModule,
-        RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' }),
-        NgxsRouterPluginModule.forRoot(),
-        NgxsModule.forRoot([StateApp], { selectorOptions: {
-          suppressErrors: false,
-          injectContainerState: true
-        }}),
-        NgxsReduxDevtoolsPluginModule.forRoot(),
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        })
-    ],
-    declarations: [AppComponent],
-    exports: [AppComponent]
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    HttpClientModule,
+    MenuComponentModule,
+    RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules }),
+    NgxsRouterPluginModule.forRoot(),
+    NgxsModule.forRoot([StateApp], {
+      selectorOptions: {
+        suppressErrors: false,
+        injectContainerState: true,
+      },
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
+  declarations: [AppComponent],
+  exports: [AppComponent],
 })
 export class AppComponentModule implements DoBootstrap {
   constructor(private applicationRef: ApplicationRef) {}
